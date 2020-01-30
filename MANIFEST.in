@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include pte *.css
+recursive-include pte *.csv
+recursive-include pte *.html
+recursive-include pte *.ico
+recursive-include pte *.js
+recursive-include pte *.json
+recursive-include pte *.md
+recursive-include pte *.png
+recursive-include pte *.py
+recursive-include pte *.svg
+recursive-include pte *.txt
+recursive-exclude pte *.pyc

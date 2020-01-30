@@ -1,0 +1,127 @@
+{
+ "autoname": ".#####./CORP/PTE/.YYYY./",
+ "creation": "2020-01-24 20:27:35.173559",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "tanggal_surat",
+  "project",
+  "department",
+  "column_break_5",
+  "penerima_surat",
+  "customer",
+  "supplier",
+  "pic",
+  "deskripsi",
+  "lampiran",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "No Dokument",
+   "options": "PTE/CORP/.YY",
+   "print_hide": 1,
+   "reqd": 1,
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Management Surat Corporate",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "tanggal_surat",
+   "fieldtype": "Date",
+   "label": "Tanggal"
+  },
+  {
+   "fieldname": "lampiran",
+   "fieldtype": "Attach",
+   "label": "Lampiran Surat"
+  },
+  {
+   "fieldname": "deskripsi",
+   "fieldtype": "Data",
+   "label": "Deskripsi Surat"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "penerima_surat",
+   "fieldtype": "Select",
+   "label": "Penerima",
+   "options": "Customer\nSupplier\nPIC"
+  },
+  {
+   "depends_on": "eval:doc.penerima_surat == \"Customer\"",
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer",
+   "print_hide": 1
+  },
+  {
+   "depends_on": "eval:doc.penerima_surat == \"Supplier\"",
+   "fieldname": "supplier",
+   "fieldtype": "Link",
+   "label": "Supplier",
+   "options": "Supplier",
+   "print_hide": 1
+  },
+  {
+   "depends_on": "eval:doc.penerima_surat == \"PIC\"",
+   "fieldname": "pic",
+   "fieldtype": "Data",
+   "label": "PIC"
+  },
+  {
+   "depends_on": "eval:doc.penerima_surat == \"Customer\"",
+   "fieldname": "project",
+   "fieldtype": "Data",
+   "label": "Proyek",
+   "print_hide": 1
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Select",
+   "label": "Department",
+   "options": "Finance\nTC\nIndustrial\nCorporate"
+  }
+ ],
+ "is_submittable": 1,
+ "modified": "2020-01-28 14:47:10.926954",
+ "modified_by": "Administrator",
+ "module": "Prastiwahyu Management",
+ "name": "Management Surat Corporate",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}
