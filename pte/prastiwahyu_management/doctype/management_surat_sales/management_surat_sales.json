@@ -1,17 +1,19 @@
 {
- "autoname": "PTE/SLS/.YY./.#####",
- "creation": "2020-01-24 21:05:24.423463",
+ "autoname": "PTE/SLS/.YYYY./.#####.",
+ "creation": "2020-02-03 14:06:33.018352",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
   "naming_series",
   "tanggal_surat",
+  "project",
   "column_break_5",
-  "penerima_surat",
+  "customer",
+  "pic",
   "deskripsi",
+  "kontraktor",
   "lampiran",
-  "amended_from",
   "amended_from"
  ],
  "fields": [
@@ -20,7 +22,7 @@
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "No Dokument",
-   "options": "PTE/SLS/.YY",
+   "options": ".#####./CORP/SLS/.YYYY./",
    "print_hide": 1,
    "reqd": 1,
    "set_only_once": 1
@@ -31,13 +33,27 @@
    "label": "Tanggal"
   },
   {
+   "fieldname": "project",
+   "fieldtype": "Data",
+   "label": "Proyek"
+  },
+  {
    "fieldname": "column_break_5",
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "penerima_surat",
+   "depends_on": "eval:doc.penerima_surat == \"Customer\"",
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Penerima",
+   "options": "Customer",
+   "print_hide": 1
+  },
+  {
+   "depends_on": "eval:doc.penerima_surat == \"PIC\"",
+   "fieldname": "pic",
    "fieldtype": "Data",
-   "label": "Penerima"
+   "label": "PIC"
   },
   {
    "fieldname": "deskripsi",
@@ -54,22 +70,18 @@
    "fieldtype": "Link",
    "label": "Amended From",
    "no_copy": 1,
-   "options": "Management Surat Corporate",
+   "options": "Management Surat Sales",
    "print_hide": 1,
    "read_only": 1
   },
   {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Management Surat Sales",
-   "print_hide": 1,
-   "read_only": 1
+   "fieldname": "kontraktor",
+   "fieldtype": "Data",
+   "label": "Kontraktor"
   }
  ],
  "is_submittable": 1,
- "modified": "2020-01-24 21:05:24.423463",
+ "modified": "2020-02-03 14:13:43.820200",
  "modified_by": "Administrator",
  "module": "Prastiwahyu Management",
  "name": "Management Surat Sales",

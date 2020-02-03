@@ -24,7 +24,7 @@
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "No Dokument",
-   "options": "PTE/CORP/.YY",
+   "options": ".#####./CORP/PTE/.YYYY./",
    "print_hide": 1,
    "reqd": 1,
    "set_only_once": 1
@@ -100,7 +100,7 @@
   }
  ],
  "is_submittable": 1,
- "modified": "2020-01-28 14:47:10.926954",
+ "modified": "2020-02-03 13:58:08.035551",
  "modified_by": "Administrator",
  "module": "Prastiwahyu Management",
  "name": "Management Surat Corporate",
